@@ -17,36 +17,21 @@ const ImageSlider = ({ images, autoPlayInterval = 5000 }) => {
     if (!autoPlayInterval) return;
 
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
-  }, [currentIndex, autoPlayInterval]);
+  }, [autoPlayInterval, images.length]);
 
   if (!images || images.length === 0) {
     return null;
   }
 
   return (
-    <div className="image-slider h-64 md:h-80">
-      <div
-        className="flex transition-transform duration-500 ease-in-out h-full"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((image, index) => (
-          <div key={index} className="min-w-full h-full flex-shrink-0">
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-
+    <div className="image-slider h-64 md:h-80 relative">
       {/* Navigation Arrows */}
       <button
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-background/80 p-2 rounded-full text-foreground hover:bg-background"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-background/80 p-2 rounded-full text-foreground hover:bg-background z-10"
         onClick={prevSlide}
         aria-label="Previous slide"
       >
@@ -54,12 +39,27 @@ const ImageSlider = ({ images, autoPlayInterval = 5000 }) => {
       </button>
 
       <button
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-background/80 p-2 rounded-full text-foreground hover:bg-background"
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-background/80 p-2 rounded-full text-foreground hover:bg-background z-10"
         onClick={nextSlide}
         aria-label="Next slide"
       >
         <ChevronRight className="h-5 w-5" />
       </button>
+
+      <div
+        className="flex transition-transform duration-500 ease-in-out h-full"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((image, index) => (
+          <div key={index} className="min-w-full h-full flex-shrink-0 flex items-center justify-center">
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-full object-contain mx-auto my-auto"
+            />
+          </div>
+        ))}
+      </div>
 
       {/* Indicators */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">

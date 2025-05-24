@@ -1,13 +1,29 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ImageSlider from "@/components/ImageSlider";
 import { Button } from "@/components/button";
 import "@/scss/components/_simulari-pages.scss";
+import MathJaxRender from "@/components/MathJaxRender";
+
+import simulatorPendulSimpluImg from "../../../public/res/screenshots/Simplu_Screenshot.png";
+import simulatorPendulSimpluImg1 from "../../../public/res/screenshots/Simplu_Screenshot1.png";
+import simulatorPendulAmortizatImg from "../../../public/res/screenshots/Amortizat_Screenshot.png";
+import simulatorPendulAmortizatImg1 from "../../../public/res/screenshots/Amortizat_Screenshot1.png";
+import simulatorUndeImg from "../../../public/res/screenshots/Unde_Screenshot.png";
+import simulatorUndeImg1 from "../../../public/res/screenshots/Unde_Screenshot2.png";
 
 const PendulePage = () => {
   const pendulumImages = [
-    { src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625", alt: "Pendulum simulation" },
-    { src: "https://images.unsplash.com/photo-1527576539890-dfa815648363", alt: "Wave simulation" },
+    { src: simulatorPendulSimpluImg, alt: "Pendulul Simplu" },
+    { src: simulatorPendulSimpluImg1, alt: "Pendulul Simplu" },
+  ];
+
+  const pendulumImages1 = [
+    { src: simulatorPendulAmortizatImg, alt: "Pendulul Amortizat" },
+    { src: simulatorPendulAmortizatImg1, alt: "Pendulul Amortizat" },
+  ];
+  const pendulumImages2 = [
+    { src: simulatorUndeImg, alt: "Pendulul Amortizat" },
+    { src: simulatorUndeImg1, alt: "Pendulul Amortizat" },
   ];
 
   return (
@@ -28,16 +44,24 @@ const PendulePage = () => {
           <div className="space-y-12">
             {/* Pendulul simplu */}
             <div className="rounded-container">
-              <h2 className="text-2xl font-bold mb-4">Pendulul simplu</h2>
+              <h2 className="text-2xl font-bold mb-4">Pendulul gravitational</h2>
               <p className="text-muted-foreground mb-6">
-                Un pendul simplu constă dintr-un corp suspendat de un fir inextensibil și de masă neglijabilă, 
-                care oscilează sub acțiunea forței gravitaționale.
+               Pendulul gravitațional este un ansamblu format dintr-un corp punctiform de masă m, atârnat de un fir inextensibil, de masă neglijabilă și lungime l. Dacă corpul este scos din poziția de echilibru și lăsat liber, pentru unghiuri mici de deviație el va oscila liniar armonic cu perioada de oscilație:
               </p>
-              <ImageSlider images={pendulumImages} />
+              <div className="image-slider h-64 md:h-80 relative flex items-center justify-center mb-8">
+                <img
+                  src={pendulumImages[0].src}
+                  alt={pendulumImages[0].alt}
+                  className="w-full h-full object-contain mx-auto my-auto"
+                />
+              </div>
               <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Formula perioadei:</h3>
-                  <div className="text-lg font-mono">T = 2π · √(l/g)</div>
+                  <div className="text-lg font-mono">
+                    {"\\( T = 2\\pi \\cdot \\sqrt{\\frac{l}{g}} \\)"}
+                    <MathJaxRender />
+                  </div>
                   <p className="text-muted-foreground mt-2">
                     unde l este lungimea pendulului, iar g este accelerația gravitațională.
                   </p>
@@ -52,7 +76,13 @@ const PendulePage = () => {
                 Un pendul dublu constă din două pendule, al doilea fiind atașat de primul. 
                 Acest sistem prezintă comportament haotic pentru anumite condiții inițiale.
               </p>
-              <ImageSlider images={pendulumImages.slice().reverse()} />
+              <div className="image-slider h-64 md:h-80 relative flex items-center justify-center mb-8">
+                <img
+                  src={pendulumImages1[0].src}
+                  alt={pendulumImages1[0].alt}
+                  className="w-full h-full object-contain mx-auto my-auto"
+                />
+              </div>
               <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Caracteristici:</h3>
@@ -72,11 +102,20 @@ const PendulePage = () => {
                 Pendulul fizic este un corp rigid care oscilează în jurul unui punct sau unei axe fixe 
                 sub acțiunea forței gravitaționale.
               </p>
-              <ImageSlider images={pendulumImages} />
+              <div className="image-slider h-64 md:h-80 relative flex items-center justify-center mb-8">
+                <img
+                  src={pendulumImages2[0].src}
+                  alt={pendulumImages2[0].alt}
+                  className="w-full h-full object-contain mx-auto my-auto"
+                />
+              </div>
               <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Formula perioadei:</h3>
-                  <div className="text-lg font-mono">T = 2π · √(I/(m·g·h))</div>
+                  <div className="text-lg font-mono">
+                    {"\\( T = 2\\pi \\cdot \\sqrt{\\frac{I}{mgh}} \\)"}
+                    <MathJaxRender />
+                  </div>
                   <p className="text-muted-foreground mt-2">
                     unde I este momentul de inerție, m este masa, g este accelerația gravitațională, 
                     iar h este distanța de la centrul de masă la axa de rotație.

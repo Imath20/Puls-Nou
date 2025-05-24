@@ -8,6 +8,8 @@ import simulatorPendulSimpluImg from "../public/res/screenshots/Simplu_Screensho
 import simulatorPendulSimpluImg1 from "../public/res/screenshots/Simplu_Screenshot1.png";
 import simulatorPendulAmortizatImg from "../public/res/screenshots/Amortizat_Screenshot.png";
 import simulatorPendulAmortizatImg1 from "../public/res/screenshots/Amortizat_Screenshot1.png";
+import simulatorPendulTrasnitImg from "../public/res/screenshots/Trasnit_Screenshot.png";
+import simulatorPendulTrasnitImg1 from "../public/res/screenshots/Trasnit_Screenshot1.png";
 import simulatorUndeImg from "../public/res/screenshots/Unde_Screenshot.png";
 import simulatorUndeImg1 from "../public/res/screenshots/Unde_Screenshot2.png";
 import simulatorLissajousImg from "../public/res/screenshots/Lissajous_Screenshot.png";
@@ -16,6 +18,12 @@ import simulatorSeismtImg from "../public/res/screenshots/Seism_Screenshot.png";
 import simulatorSeismtImg1 from "../public/res/screenshots/Seism_Screenshot1.png";
 import simulatorPrismaImg from "../public/res/screenshots/Prisma_Screenshot.png";
 import simulatorPrismaImg1 from "../public/res/screenshots/Prisma_Screenshot1.png";
+import simulatorFunctiiImg from "../public/res/screenshots/Functii_Screenshot.png";
+import simulatorFunctiiImg1 from "../public/res/screenshots/Functii_Screenshot1.png";
+import simulatorGraficePendulImg from "../public/res/screenshots/Grafice_Pendule_Screenshot.png"; 
+import simulatorGraficePendulImg1 from "../public/res/screenshots/Grafice_Pendule_Screenshot1.png";
+import simulatorGraficeBasicImg from "../public/res/screenshots/Grafice_Basic_Screenshot.png";
+import simulatorGraficeBasicImg1 from "../public/res/screenshots/Grafice_Basic_Screenshot1.png";
 
 // Data for simulations
 const simulationsData = [
@@ -49,8 +57,23 @@ const simulationsData = [
       },
     ]
   },
-  {
+   {
     id: 3,
+    title: "Pendulul Mecanic",
+    description: "Simularea mișcării oscilatorii mecanice.",
+    slides: [
+      { 
+        image: simulatorPendulTrasnitImg,
+        caption: "Oscilație mecanică" 
+      },
+      { 
+        image: simulatorPendulTrasnitImg1,
+        caption: "Oscilație mecanică"
+      },
+    ]
+  },
+  {
+    id: 4,
     title: "Undele produse in apa",
     description: "Simulează propagarea undelor în apă.",
     slides: [
@@ -65,7 +88,7 @@ const simulationsData = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     title: "Figuri Lissajous",
     description: "Simulează figuri Lissajous în funcție de frecvențele oscilatorilor.",
     slides: [
@@ -79,8 +102,53 @@ const simulationsData = [
       },
     ]
   },
+    {
+    id: 6,
+    title: "Grafice Pendule",
+    description: "Simulează graficele pentru diferite tipuri de pendule.",
+    slides: [
+      { 
+        image: simulatorGraficePendulImg,
+        caption: "Grafice Pendule"
+      },
+      { 
+        image: simulatorGraficePendulImg1,
+        caption: "Grafice Pendule"
+      },
+    ]
+  },
+   {
+    id: 7,
+    title: "Grafice Funcții",
+    description: "Simulează graficele pentru diferite funcții.",
+    slides: [
+      { 
+        image: simulatorFunctiiImg,
+        caption: "Grafice Funcții"
+      },
+      { 
+        image: simulatorFunctiiImg1,
+        caption: "Grafice Funcții"
+      },
+    ]
+  },
+     {
+    id: 8,
+    title: "Grafice Simple",
+    description: "Simulează graficele pentru diferite funcții simple.",
+    slides: [
+      { 
+        image: simulatorGraficeBasicImg,
+        caption: "Grafice Simple"
+      },
+      { 
+        image: simulatorGraficeBasicImg1,
+        caption: "Grafice Simple"
+      },
+    ]
+  },
   {
-    id: 5,
+    id: 9,
     title: "Seism",
     description: "Simulează un cutremur și efectele sale.",
     slides: [
