@@ -22,7 +22,7 @@
 h1,
 .font-bold {
   font-weight: bold;
-  color: #fff;
+  color: var(--primary-color-current-mode); // was #fff
 }
 
 h1 {
@@ -34,7 +34,7 @@ h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--primary-color-current-mode); // was #fff
 }
 
 h3 {
@@ -48,7 +48,7 @@ h3 {
 }
 
 .text-muted-foreground {
-  color: #b3b3b3;
+  color: var(--primary-color-current-mode); // or use a muted variable if you have one
 }
 
 .rounded-container {
@@ -57,6 +57,13 @@ h3 {
   padding: 2rem;
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.10);
   margin-bottom: 2rem;
+
+  .flex-col {
+    display: flex;
+    flex-direction: column !important;
+    gap: 0.5rem;
+    align-items: flex-start; // add this line
+  }
 }
 
 .list-disc {
@@ -69,6 +76,9 @@ h3 {
   padding: 0.25rem 0.5rem;
   border-radius: 0.3rem;
   display: inline-block;
+  width: auto;
+  max-width: 100%;
+  white-space: pre-line;
 }
 
 a.text-primary {
@@ -87,8 +97,8 @@ button,
 .Button,
 .start-simulation-btn {
   display: inline-block;
-  background: #fff;
-  color: #18181b;
+  background: var(--primary-color-current-mode); // Invert: use text color as background
+  color: var(--primary-background-current-mode); // Invert: use background as text color
   border: none;
   border-radius: 0.5rem;
   padding: 0.75rem 1.5rem;
@@ -99,8 +109,8 @@ button,
   transition: background 0.2s, color 0.2s;
 
   &:hover {
-    background: #f3f4f6;
-    color: #111;
+    background: var(--accent-color-current-mode);
+    color: var(--primary-background-current-mode);
   }
 }
 
@@ -197,7 +207,7 @@ button,
   }
 }
 
-//seisme joc
+//seisme joc si unde reprezentare
 .top-1 {
   margin-top: 37px;
 }
@@ -218,6 +228,18 @@ button,
   margin-bottom: 40px;
 }
 
+.sketchfab-info {
+  position: absolute;
+  top: 10px;
+  right: -380px;
+  font-size: 16px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 90%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
 
 .sketchfab-info1 {
   position: absolute;
@@ -231,3 +253,47 @@ button,
   max-width: 90%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+
+.model-buttons {
+    margin-top: 30px ;
+    margin-bottom: 20px;
+    display: flex;
+    gap: -200px;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* aliniere la stânga */
+    margin-left: 10px; /* mai mult spațiu pe stânga */
+    width: 50%;
+    max-width: 100%; /* eliminăm limita maximă de lățime */
+  }
+  
+  .model-buttons button {
+    padding: 10px 24px;
+    border: none;
+    background-color: #4A90E2 !important;
+    color: #fff !important;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right:  -70px;
+    margin-bottom: -20px;
+  }
+  
+  .model-buttons button:hover {
+    background-color: #357ABD !important;
+  }
+  
+  .model-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 40px;
+  }
+  
+  iframe {
+    width: 100%;
+    width:1000px;
+    height: 650px;
+    border: none;
+    border-radius: 8px;
+  }

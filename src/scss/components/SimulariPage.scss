@@ -1,7 +1,24 @@
+:root {
+    --primary-background-current-mode: #fff;
+    --secondary-background-current-mode: #f5f5f5;
+    --primary-color-current-mode: #18181b; // almost black
+    --accent-color-current-mode: #60a5fa;
+    --border-color-current-mode: #e5e7eb;
+}
+
+body.dark,
+.dark {
+    --primary-background-current-mode: #18181b;
+    --secondary-background-current-mode: #23232a;
+    --primary-color-current-mode: #fff;
+    --accent-color-current-mode: #60a5fa;
+    --border-color-current-mode: #35353f;
+}
 .simulari-page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--primary-background-current-mode) !important; // ADD THIS LINE
 
   .main-content {
     flex-grow: 1;
@@ -15,16 +32,15 @@
       margin-bottom: 0.5rem;
       text-align: center;
       font-weight: bold;
-      color: white;
+      color: var(--primary-color-current-mode); // CHANGED
       padding-top: 100px;
     }
 
     p {
       text-align: center;
       margin-bottom: 2rem;
-      color: var(--muted-foreground);
+      color: var(--primary-color-current-mode); // CHANGED
       font-size: 1.125rem;
-      color: white;
     }
 
     .simulations-grid {
@@ -38,13 +54,13 @@
     }
 
     .simulation-card {
-      background-color: var(--card);
-      border: 1px solid var(--border);
+      background-color: var(--secondary-background-current-mode); // CHANGED
+      border: 1px solid var(--border-color-current-mode);         // CHANGED
       border-radius: 1rem;
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: white;
+      color: var(--primary-color-current-mode); // CHANGED
 
       &:hover {
         transform: translateY(-5px);
@@ -60,15 +76,14 @@
         margin-bottom: 0.75rem;
         font-weight: 600;
         text-align: center;
-        color: white;
+        color: var(--primary-color-current-mode); // CHANGED
       }
 
       .description {
-        color: var(--muted-foreground);
+        color: var(--primary-color-current-mode); // CHANGED
         margin-bottom: 1.5rem;
         font-size: 0.95rem;
         line-height: 1.5;
-        color: white;
       }
     }
   }
@@ -187,14 +202,15 @@
   padding: 0.75rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #fff; // White background
-  color: #111; // Black text
+  background-color: var(--primary-color-current-mode); // INVERTED
+  color: var(--primary-background-current-mode);       // INVERTED
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
     opacity: 0.9;
-    background-color: #f0f0f0; // Slightly gray on hover
+    background-color: var(--accent-color-current-mode);
+    color: var(--primary-background-current-mode);
   }
 }

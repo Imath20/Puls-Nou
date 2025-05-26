@@ -1,29 +1,35 @@
 import React, { useEffect, useRef, useState } from "react";
+import useDarkMode from "@/hooks/useDarkMode";
 
-const images = [
-  {
-    url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    alt: "Wave dynamics simulation",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1636633762833-5d1658f1e29b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    alt: "Quantum physics visualization",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    alt: "Laboratory equipment",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    alt: "Scientific research",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1606763105076-0015b1289822?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-    alt: "Physics principles illustration",
-  },
-];
+import Image1White from "../../public/res/Slide1-white.png";
+import Image1Black from "../../public/res/Slide1-black.png";
 
 const Slideshow = () => {
+  const darkModeOn = useDarkMode();
+
+  const images = [
+    {
+      url: darkModeOn ? Image1Black : Image1White,
+      alt: "Realizatori Proietct PULS",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1636633762833-5d1658f1e29b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+      alt: "Quantum physics visualization",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+      alt: "Laboratory equipment",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+      alt: "Scientific research",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1606763105076-0015b1289822?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+      alt: "Physics principles illustration",
+    },
+  ];
+
   // Start at 1 for seamless looping
   const [current, setCurrent] = useState(1);
   const slideshowRef = useRef(null);

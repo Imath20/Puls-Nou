@@ -23,7 +23,7 @@ const Footer = () => {
                             <li><a href="/">Acasă</a></li>
                             <li><a href="#probleme">Probleme</a></li>
                             <li><a href="/Simulari">Simulări</a></li>
-                            <li><a href="#resurse">Resurse</a></li>
+                            <li><a href="/resurse">Resurse</a></li>
                         </ul>
                     </div>
         
@@ -39,7 +39,7 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4>Contact</h4>
                         <ul>
-                            <li><a href="#">Despre noi</a></li>
+                            <li><a href="/aboutus">Despre noi</a></li>
                             <li><a href="#">Suport</a></li>
                             <li><a href="#">Email</a></li>
                         </ul>

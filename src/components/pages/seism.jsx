@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/button";
 import "@/scss/components/_simulari-pages.scss";
+import '../../scss/style.scss';
 import MathJaxRender from "@/components/MathJaxRender";
 
 import seismicWaveAnimation from "../../../public/res/screenshots/Seism_Screenshot.png";

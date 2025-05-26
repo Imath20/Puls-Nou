@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/button";
 import "@/scss/components/_simulari-pages.scss";
+import '../../scss/style.scss';
 import MathJaxRender from "@/components/MathJaxRender";
 
 import simulatorPendulSimpluImg from "../../../public/res/screenshots/Simplu_Screenshot.png";
@@ -9,13 +10,15 @@ import simulatorPendulAmortizatImg from "../../../public/res/screenshots/Amortiz
 import simulatorGraficePendulImg from "../../../public/res/screenshots/Grafice_Pendule_Screenshot.png";
 import simulatorTrasnitPendulImg from "../../../public/res/screenshots/Trasnit_Screenshot.png";
 
+import VideoPendul from "../../../public/res/Videos/Pendul Video.mp4";
 
 const PendulePage = () => {
   const Images = [
     { src: simulatorGraficePendulImg, alt: "Grafice Pendul" },
     { src: simulatorPendulSimpluImg, alt: "Pendulul Simplu" },
     { src: simulatorPendulAmortizatImg, alt: "Pendulul Amortizat" },
-    { src: simulatorTrasnitPendulImg, alt: "Pendulul Mecanic" }
+    { src: simulatorTrasnitPendulImg, alt: "Pendulul Mecanic" },
+    { src: VideoPendul, alt: "Video Pendul" }
   ];
 
 
@@ -25,7 +28,7 @@ const PendulePage = () => {
       <div style={{ paddingTop: "110px", flex: 1, display: "flex", flexDirection: "column" }}>
         <main className="flex-grow container mx-auto px-4 py-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Mișcărea oscilatorie armonică. </h1>
-          <div className="max-w-3xl mb-10">
+          <div className="max-w-3xl mb-10 mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Proprietățile mișcării oscilatorii armonice. </h1>
             <p className="text-lg text-muted-foreground mb-4">
               Oscilatorul liniar armonic este un sistem fizic idealizat care descrie mișcarea periodică a unui obiect supus unei forțe restauratoare proporționale cu deplasarea sa față de poziția de echilibru. Este un model fundamental în fizică, cu aplicații în mecanică, electricitate, acustică și chiar mecanica cuantică.
@@ -33,8 +36,22 @@ const PendulePage = () => {
             <p className="text-lg text-muted-foreground">
               Explorează simulările noastre pentru a vizualiza comportamentul oscilatorilor armonici și pentru a înțelege mai bine conceptele de bază precum perioada, frecvența și amplitudinea.
             </p>
+            <div className="flex justify-center my-8">
+              <video
+                src={Images[4].src}
+                alt={Images[4].alt}
+                controls
+                style={{
+                  width: "100%",
+                  maxWidth: "500px",
+                  objectFit: "cover",
+                  borderRadius: "12px",
+                  background: "#23232a"
+                }}
+                title="Cum se formează undele sonore într-un tub și cum se determină frecvența fundamentală? (exemplu video)"
+              />
+            </div>
           </div>
-
           <div className="space-y-12">
             {/* Grafice Pendul */}
             <div className="rounded-container">

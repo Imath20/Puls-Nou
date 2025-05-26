@@ -1,4 +1,4 @@
-import About from "@/components/About";
+import About from "./components/About";
 import Achievements from "@/components/Achievements";
 import ContactUs from "@/components/ContactUs";
 import Home from "@/components/Home";
@@ -6,6 +6,7 @@ import OurWork from "@/components/OurWork";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SearchResults from "./components/pages/SearchResults";
 
 import $ from 'jquery';
 
@@ -16,6 +17,7 @@ import PendulePage from "./components/pages/pendule";
 import UndePage from "./components/pages/unde";
 import LissajousPage from "./components/pages/lissajous"; 
 import SeismePage from "./components/pages/seism"; 
+import ResursePage from "./resurse";
 import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
@@ -123,6 +125,9 @@ const App = () => {
           <Route path="/Simulari/unde" element={<UndePage />} />
           <Route path="/Simulari/lissajous" element={<LissajousPage />} />
           <Route path="/Simulari/seism" element={<SeismePage />} />
+          <Route path="/resurse" element={<ResursePage />} />
+          <Route path="/aboutus" element={<About />} />
+          <Route path="/search" element={<SearchResults />} />
         </Routes>
       </div>
     </Router>

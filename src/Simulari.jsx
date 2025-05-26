@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./scss/components/SimulariPage.scss";
-
+import './scss/style.scss';
 import simulatorPendulSimpluImg from "../public/res/screenshots/Simplu_Screenshot.png";
 import simulatorPendulSimpluImg1 from "../public/res/screenshots/Simplu_Screenshot1.png";
 import simulatorPendulAmortizatImg from "../public/res/screenshots/Amortizat_Screenshot.png";

@@ -1,5 +1,5 @@
 import { Book, FileQuestion, HelpCircle, Home, Layout, ListCheck, ListChecks, Settings, User, Search, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import PulsLogoWhite from '/res/puls-logo-new2.png';
@@ -9,9 +9,11 @@ import useDarkMode from "../hooks/useDarkMode";
 const Navbar = () => {
     const [pulsOpen, setPulsOpen] = useState(false);
     const [hoveringDropdown, setHoveringDropdown] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
     const dropdownRef = useRef(null);
     let closeTimeout = useRef();
     const darkModeOn = useDarkMode();
+    const navigate = useNavigate();
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -45,6 +47,19 @@ const Navbar = () => {
         setPulsOpen((prev) => !prev);
     };
 
+    const handleSearchChange = (e) => {
+        setSearchValue(e.target.value);
+    };
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (searchValue.trim()) {
+            // Navigate to a search results page with the query as a URL param
+            navigate(`/search?q=${encodeURIComponent(searchValue.trim())}`);
+            setSearchValue("");
+        }
+    };
+
     return (
         <nav>
             {/* Logo */}
@@ -54,14 +69,16 @@ const Navbar = () => {
                 </Link>
             </div>
             {/* Search Bar */}
-            <div id="navbar-search">
+            <form id="navbar-search" onSubmit={handleSearchSubmit}>
                 <Search className="search-icon" strokeWidth={3} />
                 <input
                     type="text"
-                    // placeholder="Cauta..."
                     className="search-input"
+                    value={searchValue}
+                    onChange={handleSearchChange}
+                    placeholder="Caută..."
                 />
-            </div>
+            </form>
             {/* Links */}
             <div id="nav-container">
                 <ul id="nav-list">
