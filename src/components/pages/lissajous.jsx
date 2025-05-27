@@ -97,7 +97,16 @@ const LissajousPage = () => {
 										<strong>φ</strong> este diferența de fază.
 									</p>
 								</div>
-								<Button size="lg">Începe simularea</Button>
+								<a
+									href="/Simulations/Figuri LIssajous/grafice.html"
+									target="_blank"
+									rel="noopener noreferrer"
+									style={{ textDecoration: "none" }}
+								>
+									<Button size="lg">
+										Vezi simularea
+									</Button>
+								</a>
 							</div>
 						</div>
 						<div className="rounded-container">
@@ -134,9 +143,18 @@ const LissajousPage = () => {
 										<strong>φ</strong> este diferența de fază.
 									</p>
 								</div>
-								<Button size="lg">Începe simularea</Button>
+								<a
+									href="/Simulations/Mix/grafice.html"
+									target="_blank"
+									rel="noopener noreferrer"
+									style={{ textDecoration: "none" }}
+								>
+									<Button size="lg">
+										Vezi simularea
+									</Button>
+								</a>
 							</div>
-							
+
 						</div>
 					</div>
 				</main>

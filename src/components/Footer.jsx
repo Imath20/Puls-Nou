@@ -1,4 +1,3 @@
-
 const Footer = () => {
     return (
         <footer className="footer">
@@ -41,7 +40,9 @@ const Footer = () => {
                         <ul>
                             <li><a href="/aboutus">Despre noi</a></li>
                             <li><a href="#">Suport</a></li>
-                            <li><a href="#">Email</a></li>
+                            <li>
+                                <a href="mailto:pulsphysics@gmail.com">Email</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

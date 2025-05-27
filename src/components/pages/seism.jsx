@@ -73,7 +73,16 @@ const SeismePage = () => {
                     </p>
                   </div>
                 </div>
-                <Button size="lg">Vezi simularea</Button>
+                <a
+                  href="/Simulations/Mix/Cutremur.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="lg">
+                    Vezi simularea
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

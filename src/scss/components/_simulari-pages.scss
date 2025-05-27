@@ -80,6 +80,9 @@ h3 {
   max-width: 100%;
   white-space: pre-line;
 }
+.rounded-container .font-mono {
+   color: var(--primary-color-current-mode);
+}
 
 a.text-primary {
   color: #60a5fa;

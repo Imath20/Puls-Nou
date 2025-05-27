@@ -20,7 +20,7 @@ import simulatorPrismaImg from "../public/res/screenshots/Prisma_Screenshot.png"
 import simulatorPrismaImg1 from "../public/res/screenshots/Prisma_Screenshot1.png";
 import simulatorFunctiiImg from "../public/res/screenshots/Functii_Screenshot.png";
 import simulatorFunctiiImg1 from "../public/res/screenshots/Functii_Screenshot1.png";
-import simulatorGraficePendulImg from "../public/res/screenshots/Grafice_Pendule_Screenshot.png"; 
+import simulatorGraficePendulImg from "../public/res/screenshots/Grafice_Pendule_Screenshot.png";
 import simulatorGraficePendulImg1 from "../public/res/screenshots/Grafice_Pendule_Screenshot1.png";
 import simulatorGraficeBasicImg from "../public/res/screenshots/Grafice_Basic_Screenshot.png";
 import simulatorGraficeBasicImg1 from "../public/res/screenshots/Grafice_Basic_Screenshot1.png";
@@ -32,13 +32,13 @@ const simulationsData = [
     title: "Pendulul Oscilator Simplu",
     description: "Simularea mișcării oscilatorii armonice simple.",
     slides: [
-      { 
-        image: simulatorPendulSimpluImg, 
-        caption: "Oscilație armonică simplă" 
+      {
+        image: simulatorPendulSimpluImg,
+        caption: "Oscilație armonică simplă"
       },
-      { 
-        image: simulatorPendulSimpluImg1, 
-        caption: "Oscilație armonică simplă" 
+      {
+        image: simulatorPendulSimpluImg1,
+        caption: "Oscilație armonică simplă"
       },
     ]
   },
@@ -47,26 +47,26 @@ const simulationsData = [
     title: "Pendulul Oscilator Amortizat",
     description: "Simularea mișcării oscilatorii amortizate.",
     slides: [
-      { 
-        image: simulatorPendulAmortizatImg, 
-        caption: "Oscilație amortizată" 
+      {
+        image: simulatorPendulAmortizatImg,
+        caption: "Oscilație amortizată"
       },
-      { 
+      {
         image: simulatorPendulAmortizatImg1,
         caption: "Oscilație amortizată"
       },
     ]
   },
-   {
+  {
     id: 3,
-    title: "Pendulul Mecanic",
-    description: "Simularea mișcării oscilatorii mecanice.",
+    title: "Pendul simplu neliniar",
+    description: "Simularea mișcării oscilatorii neliniare a unui pendul.",
     slides: [
-      { 
+      {
         image: simulatorPendulTrasnitImg,
-        caption: "Oscilație mecanică" 
+        caption: "Oscilație mecanică"
       },
-      { 
+      {
         image: simulatorPendulTrasnitImg1,
         caption: "Oscilație mecanică"
       },
@@ -77,13 +77,13 @@ const simulationsData = [
     title: "Undele produse in apa",
     description: "Simulează propagarea undelor în apă.",
     slides: [
-      { 
+      {
         image: simulatorUndeImg,
-        caption: "Unde în apă" 
+        caption: "Unde în apă"
       },
-      { 
+      {
         image: simulatorUndeImg1,
-        caption: "Unde în apă" 
+        caption: "Unde în apă"
       },
     ]
   },
@@ -92,56 +92,56 @@ const simulationsData = [
     title: "Figuri Lissajous",
     description: "Simulează figuri Lissajous în funcție de frecvențele oscilatorilor.",
     slides: [
-      { 
+      {
         image: simulatorLissajousImg,
-        caption: "Figuri Lissajous" 
+        caption: "Figuri Lissajous"
       },
-      { 
+      {
         image: simulatorLissajousImg1,
-        caption: "Figuri Lissajous" 
+        caption: "Figuri Lissajous"
       },
     ]
   },
-    {
+  {
     id: 6,
     title: "Grafice Pendule",
     description: "Simulează graficele pentru diferite tipuri de pendule.",
     slides: [
-      { 
+      {
         image: simulatorGraficePendulImg,
         caption: "Grafice Pendule"
       },
-      { 
+      {
         image: simulatorGraficePendulImg1,
         caption: "Grafice Pendule"
       },
     ]
   },
-   {
+  {
     id: 7,
     title: "Grafice Funcții",
     description: "Simulează graficele pentru diferite funcții.",
     slides: [
-      { 
+      {
         image: simulatorFunctiiImg,
         caption: "Grafice Funcții"
       },
-      { 
+      {
         image: simulatorFunctiiImg1,
         caption: "Grafice Funcții"
       },
     ]
   },
-     {
+  {
     id: 8,
     title: "Grafice Simple",
     description: "Simulează graficele pentru diferite funcții simple.",
     slides: [
-      { 
+      {
         image: simulatorGraficeBasicImg,
         caption: "Grafice Simple"
       },
-      { 
+      {
         image: simulatorGraficeBasicImg1,
         caption: "Grafice Simple"
       },
@@ -152,26 +152,26 @@ const simulationsData = [
     title: "Seism",
     description: "Simulează un cutremur și efectele sale.",
     slides: [
-      { 
+      {
         image: simulatorSeismtImg,
         caption: "Cutremur"
       },
-      { 
+      {
         image: simulatorSeismtImg1,
         caption: "Cutremur"
       },
     ]
   },
-   {
-    id: 6,
+  {
+    id: 10,
     title: "Prisma",
     description: "Simulează dispersia luminii printr-o prismă.",
     slides: [
-      { 
+      {
         image: simulatorPrismaImg,
         caption: "Prisma"
       },
-      { 
+      {
         image: simulatorPrismaImg1,
         caption: "Prisma"
       },
@@ -192,10 +192,10 @@ const SimulariPage = () => {
     setCurrentSlides((prev) => {
       const simulation = simulationsData.find(s => s.id === simulationId);
       if (!simulation) return prev;
-      
+
       const currentIndex = prev[simulationId];
       const newIndex = currentIndex === 0 ? simulation.slides.length - 1 : currentIndex - 1;
-      
+
       return { ...prev, [simulationId]: newIndex };
     });
   };
@@ -204,10 +204,10 @@ const SimulariPage = () => {
     setCurrentSlides((prev) => {
       const simulation = simulationsData.find(s => s.id === simulationId);
       if (!simulation) return prev;
-      
+
       const currentIndex = prev[simulationId];
       const newIndex = currentIndex === simulation.slides.length - 1 ? 0 : currentIndex + 1;
-      
+
       return { ...prev, [simulationId]: newIndex };
     });
   };
@@ -219,11 +219,11 @@ const SimulariPage = () => {
   return (
     <div className="simulari-page">
       <Navbar />
-      
+
       <main className="main-content">
         <h1>Simulări</h1>
         <p>Explorează concepte fizice prin intermediul simulărilor interactive.</p>
-        
+
         <div className="simulations-grid">
           {simulationsData.map((simulation) => (
             <div key={simulation.id} className="simulation-card">
@@ -234,8 +234,8 @@ const SimulariPage = () => {
               <div className="slider-wrapper">
                 <div className="slider-container">
                   {simulation.slides.map((slide, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`slide ${index === currentSlides[simulation.id] ? 'active' : ''}`}
                     >
                       <img src={slide.image} alt={slide.caption} />
@@ -243,36 +243,77 @@ const SimulariPage = () => {
                     </div>
                   ))}
                 </div>
-                <button 
-                  className="arrow left" 
+                <button
+                  className="arrow left"
                   onClick={() => handlePrev(simulation.id)}
                   aria-label="Slide anterior"
                 >
-                 <ChevronLeft size={18} color="white" />
+                  <ChevronLeft size={18} color="white" />
                 </button>
-                <button 
-                  className="arrow right" 
+                <button
+                  className="arrow right"
                   onClick={() => handleNext(simulation.id)}
                   aria-label="Slide următor"
                 >
-                 <ChevronRight size={18} color="white" />
+                  <ChevronRight size={18} color="white" />
                 </button>
                 <div className="indicators">
                   {simulation.slides.map((_, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`dot ${index === currentSlides[simulation.id] ? 'active' : ''}`}
                       onClick={() => goToSlide(simulation.id, index)}
                     />
                   ))}
                 </div>
               </div>
-              <button className="start-simulation-btn">Începe simularea</button>
+              <button
+                className="start-simulation-btn"
+                onClick={() => {
+                  // Deschide fiecare simulare în funcție de id
+                  switch (simulation.id) {
+                    case 1:
+                      window.open("/Simulations/Mix/Reprezentari3d.html", "_blank");
+                      break;
+                    case 2:
+                      window.open("/Simulations/Mix/Oscilatie-amortizata.html", "_blank");
+                      break;
+                    case 3:
+                      window.open("/Simulations/Mix/Pendul-amplitudine.html", "_blank");
+                      break;
+                    case 4:
+                      window.open("/Simulations/Unde/simulator-unde.html", "_blank");
+                      break;
+                    case 5:
+                      window.open("/Simulations/Figuri LIssajous/grafice.html", "_blank");
+                      break;
+                    case 6:
+                      window.open("/Simulations/Grafice-Armonice/grafice-armonice.html", "_blank");
+                      break;
+                    case 7:
+                      window.open("/Simulations/Functii/functii1.html", "_blank");
+                      break;
+                    case 8:
+                      window.open("/Simulations/Mix/grafice.html", "_blank");
+                      break;
+                    case 9:
+                      window.open("/Simulations/Mix/Cutremur.html", "_blank");
+                      break;
+                    case 10:
+                      window.open("/Simulations/prisma/prisma-simulator.html", "_blank");
+                      break;
+                    default:
+                      window.open("/Simulations/prisma/prisma-simulator.html", "_blank");
+                  }
+                }}
+              >
+                Începe simularea
+              </button>
             </div>
           ))}
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

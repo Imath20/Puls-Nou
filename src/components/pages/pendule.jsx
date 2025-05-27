@@ -36,21 +36,6 @@ const PendulePage = () => {
             <p className="text-lg text-muted-foreground">
               Explorează simulările noastre pentru a vizualiza comportamentul oscilatorilor armonici și pentru a înțelege mai bine conceptele de bază precum perioada, frecvența și amplitudinea.
             </p>
-            <div className="flex justify-center my-8">
-              <video
-                src={Images[4].src}
-                alt={Images[4].alt}
-                controls
-                style={{
-                  width: "100%",
-                  maxWidth: "500px",
-                  objectFit: "cover",
-                  borderRadius: "12px",
-                  background: "#23232a"
-                }}
-                title="Cum se formează undele sonore într-un tub și cum se determină frecvența fundamentală? (exemplu video)"
-              />
-            </div>
           </div>
           <div className="space-y-12">
             {/* Grafice Pendul */}
@@ -88,7 +73,16 @@ const PendulePage = () => {
                     unde A este amplitudinea, {"\\(\\omega\\)"} <MathJaxRender /> este viteza unghiulară, {"\\(\\phi\\)"} <MathJaxRender /> este unghiul initial, iar t este perioada.
                   </p>
                 </div>
-                <Button size="lg">Începe simularea</Button>
+                <a
+                  href="/Simulations/Grafice-Armonice/grafice-armonice.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="lg">
+                    Vezi simularea
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -127,7 +121,16 @@ const PendulePage = () => {
                     unde l este lungimea pendulului, iar g este accelerația gravitațională.
                   </p>
                 </div>
-                <Button size="lg">Începe simularea</Button>
+                <a
+                  href="/Simulations/Mix/Reprezentari3d.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="lg">
+                    Vezi simularea
+                  </Button>
+                </a>
               </div>
             </div>
             {/* Pendulul amortizat*/}
@@ -160,7 +163,16 @@ const PendulePage = () => {
 
                   </ul>
                 </div>
-                <Button size="lg">Începe simularea</Button>
+                <a
+                  href="/Simulations/Mix/Oscilatie-amortizata.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="lg">
+                    Vezi simularea
+                  </Button>
+                </a>
               </div>
             </div>
             {/* Pendulul mecanic*/}
@@ -189,7 +201,16 @@ const PendulePage = () => {
                     unde {"\\(\\theta\\)"} <MathJaxRender /> este unghiul de deviație, l este lungimea firului și g este accelerația gravitațională.
                   </p>
                 </div>
-                <Button size="lg">Începe simularea</Button>
+                <a
+                  href="/Simulations/Mix/Pendul-amplitudine.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="lg">
+                    Vezi simularea
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

@@ -16,13 +16,15 @@ import PrismaImage1 from "../../../public/res/screenshots/Prisma_Screenshot1.png
 import UndeVideo from "../../../public/res/Videos/Unde Videoclip.mp4";
 import UndeVideo1 from "../../../public/res/Videos/Frecventa Undelor Video.mp4";
 
+// import PrismaSImulation from "../../../public/Simulations/prisma/prisma-simulator.html";
+
 const UndePage = () => {
   const undeImages = [
     { src: UndeImage, alt: "Simulare Unde" },
     { src: UndeImage1, alt: "Simulare Unde" }
   ];
 
-    const prismaImages = [
+  const prismaImages = [
     { src: PrismaImage, alt: "Simulare Prisma" },
     { src: PrismaImage1, alt: "Simulare Prisma" }
   ];
@@ -31,6 +33,9 @@ const UndePage = () => {
     { src: UndeVideo, alt: "Unde" },
     { src: UndeVideo1, alt: "Unde" }
   ];
+  // const HtmlPages = [
+  //   { src: PrismaSImulation, alt: "Prisma Simulation" }
+  // ]
 
   // Refs for iframe and description
   const modelFrameRef = useRef(null);
@@ -117,13 +122,22 @@ const UndePage = () => {
                     </p>
                   </div>
                 </div>
-                <Button size="lg">Vezi simularea</Button>
+                <a
+                  href="/Simulations/Unde/simulator-unde.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="lg">
+                    Vezi simularea
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
-          <div className = "max-w-3xl mb-10">
+          <div className="max-w-3xl mb-10">
             <h3 className="text-xl font-semibold mb-2">Prisma</h3>
-             <p className="text-lg text-muted-foreground mb-4">
+            <p className="text-lg text-muted-foreground mb-4">
               O prismă este un obiect transparent cu două fețe paralele și cel puțin trei fețe laterale, care refractă lumina. Prisma este utilizată pentru a descompune lumina albă în spectrul său de culori prin difracție.
             </p>
             <p className="text-lg text-muted-foreground mb-4">
@@ -178,7 +192,16 @@ const UndePage = () => {
                     </p>
                   </div>
                 </div>
-                <Button size="lg">Vezi simularea</Button>
+                <a
+                  href="/Simulations/prisma/prisma-simulator.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button size="lg">
+                    Vezi simularea
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
