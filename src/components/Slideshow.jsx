@@ -1,32 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
 import useDarkMode from "@/hooks/useDarkMode";
 
-import Image1White from "../../public/res/Slide1-white.png";
-import Image1Black from "../../public/res/Slide1-black.png";
+import SlideImageWhite1 from "../../public/res/Slideshow/Slideshowwhite1.png";
+import SlideImageBlack1 from "../../public/res/Slideshow/Slideshowblack1.png";
+import SlideImageWhite2 from "../../public/res/Slideshow/Slideshowwhite2.png";
+import SlideImageBlack2 from "../../public/res/Slideshow/Slideshowblack2.png";
+import SlideImageWhite3 from "../../public/res/Slideshow/Slideshowwhite3.png";
+import SlideImageBlack3 from "../../public/res/Slideshow/Slideshowblack3.png";
+import SlideImageWhite4 from "../../public/res/Slideshow/Slideshowwhite4.png";
+import SlideImageBlack4 from "../../public/res/Slideshow/Slideshowblack4.png";
 
 const Slideshow = () => {
   const darkModeOn = useDarkMode();
 
   const images = [
     {
-      url: darkModeOn ? Image1Black : Image1White,
-      alt: "Realizatori Proietct PULS",
+      url: darkModeOn ? SlideImageBlack1 : SlideImageWhite1,
+      alt: "Simulari Interactive",
     },
     {
-      url: "https://images.unsplash.com/photo-1636633762833-5d1658f1e29b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-      alt: "Quantum physics visualization",
+      url: darkModeOn ? SlideImageBlack2 : SlideImageWhite2,
+      alt: "Probleme de fizică",
     },
     {
-      url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-      alt: "Laboratory equipment",
+      url: darkModeOn ? SlideImageBlack3 : SlideImageWhite3,
+      alt: "Resurse educaționale",
     },
     {
-      url: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-      alt: "Scientific research",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1606763105076-0015b1289822?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
-      alt: "Physics principles illustration",
+      url: darkModeOn ? SlideImageBlack4 : SlideImageWhite4,
+      alt: "Progres și statistici",
     },
   ];
 
@@ -111,8 +113,8 @@ const Slideshow = () => {
                 loading={index === 1 ? "eager" : "lazy"}
                 onError={(e) => {
                   e.target.src =
-                    "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80";
-                  e.target.alt = "Physics concept visualization";
+                    SlideImageWhite1;
+                  e.target.alt = "Simuari Interactive";
                 }}
               />
               <div className="caption">{image.alt}</div>
